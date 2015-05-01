@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary      = "J2ObjC's JRE emulation library, emulates a subset of the Java runtime library."
   s.homepage     = "https://github.com/google/j2objc"
   s.author       = "Google Inc."
-  s.source       = { :git => 'https://github.com/actorapp/j2objc-local.git' }
+  s.source       = { :git => 'https://github.com/actorapp/j2objc-local.git', :tag => 'v0.9.7' }
   s.version      = '0.9.7'
 
   s.ios.deployment_target = '5.0'
@@ -32,17 +32,17 @@ Pod::Spec.new do |s|
     end
 
     lib.subspec 'jsr305' do |jsr305|
-      jsr305.dependency 'j2objc-local/lib/jre'
+      jsr305.dependency 'j2objc-local/dist/lib/jre'
       jsr305.libraries = 'jsr305'
     end
 
     lib.subspec 'junit' do |junit|
-      junit.dependency 'j2objc-local/lib/jre'
+      junit.dependency 'j2objc-local/dist/lib/jre'
       junit.libraries = 'j2objc_main', 'junit', 'mockito'
     end
     
     lib.subspec 'guava' do |guava|
-      guava.dependency 'j2objc-local/lib/jre'
+      guava.dependency 'j2objc-local/dist/lib/jre'
       guava.libraries = 'guava'
     end
   end
