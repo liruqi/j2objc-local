@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.header_mappings_dir = 'dist/include'
   s.prepare_command = <<-CMD
     rm -rf "dist"
-    ln -s "$J2OBJC_HOME/#{s.version}" ./dist
+    ln -s ../../../build-tools/dist/j2objc-0.9.7 ./dist
   CMD
   
   s.subspec 'lib' do |lib|
